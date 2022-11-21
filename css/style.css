@@ -1,0 +1,191 @@
+:root {
+    --light-bg: #dec5c5;
+    --dark-bg: #272424;
+}
+
+* {
+    transition-duration: 600ms;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container>a {
+    margin-left: 1vw;
+}
+
+.container {
+    padding: 2vw;
+    position: relative;
+}
+
+.imp-text {
+    font-weight: bolder;
+    font-size: 3vw;
+}
+
+.sub-text {
+    font-size: 1vw;
+}
+
+.fixed-name {
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(47vw, 45vh);
+    font-size: 1vw;
+    color: rgba(0, 0, 0, 0.532);
+}
+
+.grid {
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    width: 55vw;
+    height: 80vh;
+    gap: 5vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: absolute;
+    transform: translate(-18vw, -2vh);
+}
+
+.cell {
+    box-shadow: 2px 2px 15px 2px black;
+    border-radius: 15px;
+}
+
+.cell:nth-child(1) {
+    background-image: url(../img/1.png);
+    background-size: cover;
+}
+
+.cell:nth-child(2) {
+    background-image: url(../img/2.png);
+    background-size: cover;
+}
+
+.cell:nth-child(3) {
+    background-image: url(../img/3.png);
+    background-size: cover;
+}
+
+.cell:nth-child(4) {
+    background-image: url(../img/4.png);
+    background-size: cover;
+}
+
+.cell:nth-child(5) {
+    background-image: url(../img/5.png);
+    background-size: cover;
+}
+
+.cell:nth-child(6) {
+    background-image: url(../img/6.png);
+    background-size: cover;
+}
+
+.cell:nth-child(7) {
+    background-image: url(../img/7.jpg);
+    background-size: cover;
+}
+
+.cell:nth-child(8) {
+    background-image: url(../img/8.jpg);
+    background-size: cover;
+}
+
+.cell:nth-child(2),
+.cell:nth-child(4),
+.cell:nth-child(6),
+.cell:nth-child(8) {
+    transform: translate(0, -10vh);
+    animation: anim2 24s infinite linear;
+}
+
+@keyframes anim2 {
+    0% {
+        transform: translate(0, 20vh);
+    }
+    50% {
+        transform: translate(0, -20vh);
+    }
+    100% {
+        transform: translate(0, 20vh);
+    }
+}
+
+.cell:nth-child(1),
+.cell:nth-child(3),
+.cell:nth-child(5),
+.cell:nth-child(7) {
+    transform: translate(0, 10vh);
+    animation: anim1 24s linear infinite;
+}
+
+@keyframes anim1 {
+    0% {
+        transform: translate(0, -20vh);
+    }
+    50% {
+        transform: translate(0, 20vh);
+    }
+    100% {
+        transform: translate(0, -20vh);
+    }
+}
+
+.on,
+.off {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48vw, 81vh);
+    box-shadow: #a66868 1px 1px 1px;
+    background-color: #a66868;
+    color: white;
+    font-size: 1vw;
+    font-weight: bolder;
+    width: 5vw;
+    height: 4vh;
+}
+
+@media only screen and (max-width: 1024px) {
+    .on,
+    .off {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48vw, 80vh);
+        box-shadow: #a66868 1px 1px 1px;
+        background-color: #a66868;
+        color: white;
+        font-size: 4vw;
+        font-weight: bolder;
+        width: 20vw;
+        height: 6.5vh;
+    }
+    .imp-text {
+        font-weight: bolder;
+        font-size: 6vw;
+        z-index: 9999;
+    }
+    .sub-text {
+        font-size: 5vw;
+        z-index: 9999;
+    }
+    .fixed-name {
+        position: fixed;
+        bottom: 50%;
+        right: 50%;
+        transform: translate(47vw, 45vh);
+        font-size: 4vw;
+        color: rgba(0, 0, 0, 0.532);
+    }
+}
